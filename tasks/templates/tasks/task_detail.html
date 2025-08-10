@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card shadow-sm p-4">
+    <h1>{{ object.title }}</h1>
+    <p>{{ object.description }}</p>
+    <p><strong>Status:</strong> {% if object.completed %}<span class="text-success">Concluída</span>{% else %}<span class="text-danger">Pendente</span>{% endif %}</p>
+    <a href="{% url 'task-edit' object.pk %}" class="btn btn-warning">Editar</a>
+    <a href="{% url 'task-list' %}" class="btn btn-secondary">Voltar</a>
+</div>
+{% endblock %}
